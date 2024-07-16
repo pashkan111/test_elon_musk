@@ -8,6 +8,7 @@ class Advantage(models.Model):
     )
     value = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
+    is_displayed = models.BooleanField(default=True, help_text="Отображать ли блок")
 
     def __str__(self):
         return self.title
@@ -16,6 +17,7 @@ class Advantage(models.Model):
 class MenuItem(models.Model):
     name = models.CharField(max_length=100)
     order = models.IntegerField(default=0, help_text="Порядок следования")
+    is_displayed = models.BooleanField(default=True, help_text="Отображать ли пункт меню")
 
     def __str__(self):
         return self.name
