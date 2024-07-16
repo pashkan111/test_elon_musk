@@ -1,6 +1,8 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 from mainapp.models import Advantage, MenuItem
+
 from .serializers import AdvantageReadSerializer, MenuItemReadSerializer
 
 
