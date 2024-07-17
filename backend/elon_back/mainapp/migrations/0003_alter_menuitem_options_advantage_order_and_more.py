@@ -4,24 +4,25 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('mainapp', '0002_advantage_is_displayed_menuitem_is_displayed'),
+        ("mainapp", "0002_advantage_is_displayed_menuitem_is_displayed"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='menuitem',
+            name="menuitem",
             options={},
         ),
         migrations.AddField(
-            model_name='advantage',
-            name='order',
-            field=models.IntegerField(default=0, help_text='Порядок следования'),
+            model_name="advantage",
+            name="order",
+            field=models.IntegerField(default=0, help_text="Порядок следования"),
         ),
         migrations.AlterField(
-            model_name='advantage',
-            name='description',
-            field=models.CharField(help_text='Значком % обозначьте перенос строки в тексте', max_length=100),
+            model_name="advantage",
+            name="description",
+            field=models.CharField(
+                help_text="Значком % обозначьте перенос строки в тексте", max_length=100
+            ),
         ),
     ]

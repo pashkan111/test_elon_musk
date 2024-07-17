@@ -12,4 +12,4 @@ class AdvantageReadSerializer(serializers.ModelSerializer):
 class MenuItemReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
-        fields = ('title',)
+        fields = ("title",)

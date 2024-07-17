@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('mainapp', '0003_alter_menuitem_options_advantage_order_and_more'),
+        ("mainapp", "0003_alter_menuitem_options_advantage_order_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='advantage',
-            name='order',
-            field=models.IntegerField(help_text='Порядок следования', unique=True),
+            model_name="advantage",
+            name="order",
+            field=models.IntegerField(help_text="Порядок следования", unique=True),
         ),
         migrations.AlterField(
-            model_name='menuitem',
-            name='order',
-            field=models.IntegerField(help_text='Порядок следования', unique=True),
+            model_name="menuitem",
+            name="order",
+            field=models.IntegerField(help_text="Порядок следования", unique=True),
         ),
     ]
