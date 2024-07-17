@@ -12,20 +12,18 @@ class Advantage(models.Model):
         max_length=100, help_text="Значком % обозначьте перенос строки в тексте"
     )
     is_displayed = models.BooleanField(default=True, help_text="Отображать ли блок")
+    order = models.IntegerField(help_text="Порядок следования", unique=True)
 
     def __str__(self):
         return self.title
 
 
 class MenuItem(models.Model):
-    name = models.CharField(max_length=100)
-    order = models.IntegerField(default=0, help_text="Порядок следования")
+    title = models.CharField(max_length=100)
+    order = models.IntegerField(help_text="Порядок следования", unique=True)
     is_displayed = models.BooleanField(
         default=True, help_text="Отображать ли пункт меню"
     )
 
     def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ["order"]
+        return self.title

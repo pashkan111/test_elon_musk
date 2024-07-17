@@ -11,16 +11,11 @@ from .models import Advantage, MenuItem
 class AdvantageAdmin(admin.ModelAdmin):
     list_display = ("title", "value", "description", "is_displayed")
     search_fields = ("title", "value")
-
-    def get_queryset(self, request: HttpRequest) -> QuerySet[Any]:
-        return super().get_queryset(request).order_by("-is_displayed")
+    ordering = ("order", "-is_displayed")
 
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ("name", "order", "is_displayed")
-    search_fields = ("name",)
-    ordering = ("order",)
-
-    def get_queryset(self, request: HttpRequest) -> QuerySet[Any]:
-        return super().get_queryset(request).order_by("-is_displayed")
+    list_display = ("title", "order", "is_displayed")
+    search_fields = ("title",)
+    ordering = ("order", "-is_displayed")

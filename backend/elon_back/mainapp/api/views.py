@@ -7,12 +7,12 @@ from .serializers import AdvantageReadSerializer, MenuItemReadSerializer
 
 
 class AdvantageReadView(generics.ListAPIView):
-    queryset = Advantage.objects.filter(is_displayed=True)
+    queryset = Advantage.objects.filter(is_displayed=True).order_by('order')
     serializer_class = AdvantageReadSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
 class MenuItemReadView(generics.ListAPIView):
-    queryset = MenuItem.objects.filter(is_displayed=True)
+    queryset = MenuItem.objects.filter(is_displayed=True).order_by('order')
     serializer_class = MenuItemReadSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
