@@ -24,7 +24,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   const fetchDataMenu = async() => {
-    const response = await fetch('http://64.7.199.127:8000/api/menu/')
+    const response = await fetch('http://localhost:8000/api/menu/')
     if(!response.ok){
       throw new Error('Что-то пошло не так...')
     }
@@ -41,7 +41,7 @@ function App() {
   }
 
   const fetchDataContent = async() => {
-    const response = await fetch('http://64.7.199.127:8000/api/advantages/')
+    const response = await fetch('http://localhost:8000/api/advantages/')
     if(!response.ok){
       throw new Error('Что-то пошло не так...')
     }
