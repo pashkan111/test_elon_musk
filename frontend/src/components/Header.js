@@ -1,18 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import img from '../assets/spaceX-logo.png'
 import { BiDotsVerticalRounded } from "react-icons/bi";
 
-const navBar = [
-    'Главная', 'Технология',
-    'График полетов', 'Гарантии', 
-    'О компании', 'Контакты']
-
-function Header() {
-    // const [navBar, setNavBar] = useState([])
-
-    useEffect(() => {
-
-    })
+function Header({navBarItems}) {
   return (
     <header>
         <div className="logo">
@@ -20,9 +10,11 @@ function Header() {
         </div>
         <nav>
             <ul>
-            {navBar.map((el, i) => <li key={i}>
-                    <a href="#">{el}</a>
-                </li>)}
+                {navBarItems.map((el, i) => (
+                    <li key={i}>
+                        <a href="#">{el.title}</a>
+                    </li>
+                ))}
             </ul>
         </nav>
         <div className='points'>
